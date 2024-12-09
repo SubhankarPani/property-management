@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listing Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('listing1-image.jpg') no-repeat center center/cover;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        form {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 800px;
+            border: 2px solid white;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff6f61;
+            font-size: 32px;
+            margin-bottom: 30px;
+            margin-top: 0;
+            font-weight: bold;
+            grid-column: span 2;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            padding: 0px 4px 0px 4px;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #666;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        textarea,
+        input[type="file"],
+        input[list] {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #ff6f61;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .radio-group label {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #ff6f61;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-weight: bold;
+            grid-column: span 2;
+        }
+
+        button:hover {
+            background-color: #e65b53;
+        }
+    </style>
+</head>
+
+<body>
+<form>
+    <h2>Property Listing Form</h2>
+    <div class="form-group">
+        <label for="state">State:</label>
+        <input list="states" id="state" name="state" required>
+        <datalist id="states">
+            <option value="Andhra Pradesh">
+            <option value="Arunachal Pradesh">
+            <option value="Assam">
+            <option value="Bihar">
+            <option value="Chhattisgarh">
+            <option value="Goa">
+            <option value="Gujarat">
+            <option value="Haryana">
+            <option value="Himachal Pradesh">
+            <option value="Jharkhand">
+            <option value="Karnataka">
+            <option value="Kerala">
+            <option value="Madhya Pradesh">
+            <option value="Maharashtra">
+            <option value="Manipur">
+            <option value="Meghalaya">
+            <option value="Mizoram">
+            <option value="Nagaland">
+            <option value="Odisha">
+            <option value="Punjab">
+            <option value="Rajasthan">
+            <option value="Sikkim">
+            <option value="Tamil Nadu">
+            <option value="Telangana">
+            <option value="Tripura">
+            <option value="Uttar Pradesh">
+            <option value="Uttarakhand">
+            <option value="West Bengal">
+        </datalist>
+    </div>
+    <div class="form-group">
+        <label for="city">City:</label>
+        <input list="cities" id="city" name="city" required>
+        <datalist id="cities">
+            <option value="Mumbai">
+            <option value="Delhi">
+            <option value="Bangalore">
+            <option value="Hyderabad">
+            <option value="Ahmedabad">
+            <option value="Chennai">
+            <option value="Kolkata">
+            <option value="Surat">
+            <option value="Pune">
+            <option value="Jaipur">
+            <option value="Lucknow">
+            <option value="Kanpur">
+            <option value="Nagpur">
+            <option value="Indore">
+            <option value="Thane">
+            <option value="Bhopal">
+            <option value="Patna">
+            <option value="Vadodara">
+            <option value="Ghaziabad">
+            <option value="Ludhiana">
+            <option value="Agra">
+            <option value="Nashik">
+            <option value="Faridabad">
+            <option value="Meerut">
+            <option value="Rajkot">
+            <option value="Kalyan-Dombivli">
+        </datalist>
+    </div>
+    <div class="form-group">
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" required>
+    </div>
+    <div class="form-group">
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" name="contact" required>
+    </div>
+    <div class="form-group">
+        <label for="ownerName">Owner Name:</label>
+        <input type="text" id="ownerName" name="ownerName" required>
+    </div>
+    <div class="form-group">
+        <label>Property Type:</label>
+        <div class="radio-group">
+            <label><input type="radio" id="flat" name="propertyType" value="flat"> Flat</label>
+            <label><input type="radio" id="land" name="propertyType" value="land"> Land</label>
+            <label><input type="radio" id="house" name="propertyType" value="house"> House</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Purpose:</label>
+        <div class="radio-group">
+            <label><input type="radio" id="rent" name="purpose" value="rent"> Rent</label>
+            <label><input type="radio" id="sell" name="purpose" value="sell"> Sell</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="5" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image">
+    </div>
+    <button type="submit">Submit</button>
+</form>
+</body>
+
+</html>
